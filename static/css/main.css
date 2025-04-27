@@ -1,0 +1,205 @@
+/* Reset and base styles */
+:root {
+  --primary-color: #565656;
+  --secondary-color: #f2b900;
+  --text-color: #0a0a0a;
+  --background-color: #fff;
+  --header-bg: #2a2929;
+  --font-main: 'Roboto', sans-serif;
+  --font-heading: 'Catamaran', sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+/* Layout */
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.top-header-bar {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 10px 0;
+}
+
+.main-header {
+  background: var(--background-color);
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Navigation */
+.zita-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.zita-menu a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.zita-menu a:hover {
+  color: var(--secondary-color);
+}
+
+/* Logo */
+.zita-logo img {
+  max-width: 207px;
+}
+
+@media (max-width: 768px) {
+  .zita-logo img {
+    max-width: 225px;
+  }
+}
+
+/* Buttons */
+.elementor-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.elementor-button:hover {
+  background: var(--secondary-color);
+}
+
+/* Social Icons */
+.social-icon {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-icon a:hover {
+  color: var(--secondary-color);
+}
+
+/* Sections */
+.elementor-section {
+  padding: 60px 0;
+}
+
+.elementor-section-full_width {
+  width: 100%;
+}
+
+/* Cards */
+.elementor-widget-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Testimonials */
+.elementor-testimonial-wrapper {
+  text-align: center;
+  padding: 20px;
+}
+
+.elementor-testimonial-content {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.elementor-testimonial-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Footer */
+#zita-footer {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 40px 0 20px;
+}
+
+.bottom-footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .elementor-section {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .zita-menu {
+    flex-direction: column;
+  }
+  
+  .elementor-section {
+    padding: 30px 0;
+  }
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}

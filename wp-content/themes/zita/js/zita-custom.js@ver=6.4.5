@@ -1,4 +1,11 @@
 jQuery(document).ready(function(){
+  // Initialize Waypoint
+  if (window.Waypoint) {
+    new window.Waypoint({
+      element: document.body,
+      handler: function() {}
+    });
+  }
  "use strict";
 //-----------------------//
 // loader
@@ -360,7 +367,7 @@ if(jQuery("#header-scroll-down-hide").val()=='on'){
   var $mainheader = jQuery('header.zta-main-stick-hdr .main-header').height(); 
  var $topheader = jQuery('header.zta-main-stick-hdr .top-header').height(); 
  var $bottomheader = jQuery('header.zta-main-stick-hdr .bottom-header').height();
- $tl$headerBar = $mainheader + $topheader +$bottomheader;
+ var totalHeaderBar = ($mainheader || 0) + ($topheader || 0) + ($bottomheader || 0);
 // should start at 0
 jQuery(window).scroll(function() {
     var scroll = jQuery(window).scrollTop();
@@ -373,9 +380,9 @@ jQuery(window).scroll(function() {
           jQuery('#content,.elementor').css('margin-top',0+'px');
        }else{
          if(jQuery('body.elementor-page').length!=''){
-                       jQuery('.elementor').css('margin-top',$tl$headerBar+'px');
+                       jQuery('.elementor').css('margin-top',totalHeaderBar+'px');
               }else{
-                      jQuery('#content').css('margin-top',$tl$headerBar+'px');
+                      jQuery('#content').css('margin-top',totalHeaderBar+'px');
               }
          
        }
@@ -388,7 +395,7 @@ var $headerBar = jQuery('header').height();
 var $mainheader = jQuery('header.zta-main-stick-hdr .main-header').height(); 
 var $topheader = jQuery('header.zta-main-stick-hdr .top-header').height(); 
 var $bottomheader = jQuery('header.zta-main-stick-hdr .bottom-header').height(); 
-$tl$headerBar = $mainheader + $topheader +$bottomheader;
+var totalHeaderBar = ($mainheader || 0) + ($topheader || 0) + ($bottomheader || 0);
 var $totalheaderBar = $headerBar + 20;
   if(jQuery(document).scrollTop() > $totalheaderBar){
       jQuery("header.zta-above-stick-hdr,header.zta-main-stick-hdr,header.zta-bottom-stick-hdr").addClass("shrink");
@@ -396,9 +403,9 @@ var $totalheaderBar = $headerBar + 20;
           jQuery('#content,.elementor').css('margin-top',0+'px');
        }else{
          if(jQuery('body.elementor-page').length!=''){
-                       jQuery('.elementor').css('margin-top',$tl$headerBar +'px');
+                       jQuery('.elementor').css('margin-top',totalHeaderBar +'px');
               }else{
-                      jQuery('#content').css('margin-top',$tl$headerBar +'px');
+                      jQuery('#content').css('margin-top',totalHeaderBar +'px');
               }
        }
     }else{
